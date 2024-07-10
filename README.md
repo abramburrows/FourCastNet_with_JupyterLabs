@@ -22,7 +22,11 @@ Update the file ~/FourCastNet/config/ANFO.yaml to point to your training data. I
 ## Step 4: Set Up Wandb 
 
 FourCastNet uses Wandb to monitor the progress of your model in real time. Create an account at https://wandb.ai/site. Once you have created an account, you will need to start a project titled ERA5_precip 
-```
-code 
-```
+
+![image](https://github.com/abramburrows/FourCastNet-with-JuypterLabs/assets/147460119/cbbf648c-e1d4-47f5-9098-630b2965d939)
+
+## Step 5 Set up Train.py 
+Two lines in train.py determine which 
+- Line 537: ``` default = 'default' to default = 'full_field' ``` 
+
 
