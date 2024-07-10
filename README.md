@@ -26,7 +26,13 @@ FourCastNet uses Wandb to monitor the progress of your model in real time. Creat
 ![image](https://github.com/abramburrows/FourCastNet-with-JuypterLabs/assets/147460119/cbbf648c-e1d4-47f5-9098-630b2965d939)
 
 ## Step 5 Set up Train.py 
-Two lines in train.py determine which 
-- Line 537: ``` default = 'default' to default = 'full_field' ``` 
+
+Two lines in train.py determine whic
+- Line 537: ``` default = 'default' ``` to  ``` default = 'full_field' ```
+- Line 588: ``` params['entity'] = "flowgan" ``` to ``` params['entity'] = "aburrows8330" ```
+
+## Step 6 Determine Extent of Training 
+
+Determine the batch size and number of epochs you plan on using to train your model and adjust your ~/ANFO.yaml file accordingly. For reference, when trained our model for the first time, it took two weeks to run 50 epochs with a batch size of 10. 
 
 
