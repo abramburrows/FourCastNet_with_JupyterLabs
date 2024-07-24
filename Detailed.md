@@ -31,7 +31,7 @@ b. Verify kubectl configurations
     <img src="https://github.com/user-attachments/assets/14fd32e9-bd25-4171-af9c-5ff00cb50a57" />
   </p>
 
-    c. Set name of volume on lin 52 jupyter-pod-L40.yaml 
+  c. Set name of volume on lin 52 jupyter-pod-L40.yaml 
 
 
    <p align="center">
@@ -103,6 +103,9 @@ git clone https://github.com/NVlabs/FourCastNet.git
 
 Open the file at ~/FourCastNet/config/ANFO.yaml. If you are using the 5T data set stored in the SDSU shared file, you can copy the ANFO.yaml file attached to this GitHub. If you are able to access more than 80GB of GPU memory you will be able to edit the ANFO file by increasing the batch size. This will allow shorter training time.
 
+![image](https://github.com/user-attachments/assets/a482a50d-e60b-45dd-a108-8b709bf1525e)
+
+
 ## Step 5: Set Up Wandb 
 
 FourCastNet uses Wandb to monitor the progress of your model in real time. Create an account at https://wandb.ai/site. Once you have created an account, you will need to start a project titled ERA5_precip 
@@ -113,9 +116,20 @@ FourCastNet uses Wandb to monitor the progress of your model in real time. Creat
 
 Two lines in train.py determine which wandb project will be associated
 - Line 537: ``` default = 'default' ``` to  ``` default = 'full_field' ```
+
+![image](https://github.com/user-attachments/assets/c9004366-a2fa-485b-8fac-24ece91cc6fa)
+
 - Line 588: ``` params['entity'] = "flowgan" ``` to ``` params['entity'] = "wandb_username" ```
+
+![image](https://github.com/user-attachments/assets/a7d0104b-adfd-4995-ab20-21edadc9caaa)
+
 
 ## Step 7 Determine Extent of Training 
 
 Determine the batch size and number of epochs you plan on using to train your model and adjust your ~/ANFO.yaml file accordingly. For reference, when training our model for the first time, it took two weeks to run 50 epochs with a batch size of 10. Further training is needed when working from the original backbone checkpoint and a single A100 with 80GB of memory to ensure that an accurate model is produced. A jupyter notebook to test the accuracy of the model is found in the repo. We also share the training checkpoints of our model which can be used as the base parameters to train a better model.
 Training checkpoints will be adjusted in the ```train.py``` file for the variable ```pretrained_ckpt_path```.
+
+## Step 8 Running train.py 
+
+
+Navigate to ~/FourCastNet in an active terminal. From there, you can run train.py by entering in ``` python3 train.py```. 
