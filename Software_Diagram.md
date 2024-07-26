@@ -1,6 +1,6 @@
 Software Diagram
 
-mermaid```
+```mermaid
 graph TD
     A[FourcastNet Software Requirements]
     A --> B[Python Environment]
